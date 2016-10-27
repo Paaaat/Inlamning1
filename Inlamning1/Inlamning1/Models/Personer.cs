@@ -17,6 +17,10 @@ namespace Inlamning1.Models
         public string Telefon { get; set; }
         public string Epost { get; set; }
         public string Födelsedag { get; set; }
-        // public virtual List<Personer> Folk { get; set; }
+
+        public override string ToString()
+        {
+            return Namn;
+        }
     }
 }

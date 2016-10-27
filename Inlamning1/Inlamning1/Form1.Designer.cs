@@ -278,9 +278,9 @@
             // 
             // cmdDelete
             // 
-            this.cmdDelete.Location = new System.Drawing.Point(1231, 346);
+            this.cmdDelete.Location = new System.Drawing.Point(74, 132);
             this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(75, 23);
+            this.cmdDelete.Size = new System.Drawing.Size(75, 111);
             this.cmdDelete.TabIndex = 21;
             this.cmdDelete.Text = "Tabort";
             this.cmdDelete.UseVisualStyleBackColor = true;
