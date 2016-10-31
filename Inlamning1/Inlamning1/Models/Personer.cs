@@ -16,7 +16,7 @@ namespace Inlamning1.Models
         public string Postort { get; set; }
         public string Telefon { get; set; }
         public string Epost { get; set; }
-        public string Födelsedag { get; set; }
+        public DateTime Födelsedag { get; set; }
 
         public override string ToString()
         {

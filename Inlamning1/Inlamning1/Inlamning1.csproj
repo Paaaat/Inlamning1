@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201610270845177_Personer1.Designer.cs">
       <DependentUpon>201610270845177_Personer1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610310824373_inlamning1.cs" />
+    <Compile Include="Migrations\201610310824373_inlamning1.Designer.cs">
+      <DependentUpon>201610310824373_inlamning1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Personer.cs" />
     <Compile Include="Models\PersonerContext.cs" />
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610270845177_Personer1.resx">
       <DependentUpon>201610270845177_Personer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610310824373_inlamning1.resx">
+      <DependentUpon>201610310824373_inlamning1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

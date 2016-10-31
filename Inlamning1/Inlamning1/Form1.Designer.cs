@@ -38,7 +38,6 @@
             this.Epost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Födelsedag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNamn = new System.Windows.Forms.TextBox();
-            this.txtFödelsedag = new System.Windows.Forms.TextBox();
             this.txtEpost = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtPostort = new System.Windows.Forms.TextBox();
@@ -50,13 +49,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.cmdAdd = new System.Windows.Forms.Button();
             this.lstPersoner = new System.Windows.Forms.ListBox();
             this.txtSok = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmdUppdatera = new System.Windows.Forms.Button();
             this.cmdDelete = new System.Windows.Forms.Button();
+            this.dateFödelsedag = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dataview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             this.Födelsedag});
             this.Dataview.Location = new System.Drawing.Point(179, 12);
             this.Dataview.Name = "Dataview";
+            this.Dataview.ReadOnly = true;
             this.Dataview.RowHeadersVisible = false;
             this.Dataview.Size = new System.Drawing.Size(805, 380);
             this.Dataview.TabIndex = 0;
@@ -82,89 +83,90 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Namn
             // 
             this.Namn.HeaderText = "Namn";
             this.Namn.Name = "Namn";
+            this.Namn.ReadOnly = true;
             // 
             // Gatuadress
             // 
             this.Gatuadress.HeaderText = "Gatuadress";
             this.Gatuadress.Name = "Gatuadress";
+            this.Gatuadress.ReadOnly = true;
             // 
             // Postnummer
             // 
             this.Postnummer.HeaderText = "Postnummer";
             this.Postnummer.Name = "Postnummer";
+            this.Postnummer.ReadOnly = true;
             // 
             // Postort
             // 
             this.Postort.HeaderText = "Postort";
             this.Postort.Name = "Postort";
+            this.Postort.ReadOnly = true;
             // 
             // Telefon
             // 
             this.Telefon.HeaderText = "Telefon";
             this.Telefon.Name = "Telefon";
+            this.Telefon.ReadOnly = true;
             // 
             // Epost
             // 
             this.Epost.HeaderText = "Epost";
             this.Epost.Name = "Epost";
+            this.Epost.ReadOnly = true;
             // 
             // Födelsedag
             // 
             this.Födelsedag.HeaderText = "Födelsedag";
             this.Födelsedag.Name = "Födelsedag";
+            this.Födelsedag.ReadOnly = true;
             // 
             // txtNamn
             // 
             this.txtNamn.Location = new System.Drawing.Point(1099, 102);
             this.txtNamn.Name = "txtNamn";
-            this.txtNamn.Size = new System.Drawing.Size(100, 20);
+            this.txtNamn.Size = new System.Drawing.Size(138, 20);
             this.txtNamn.TabIndex = 1;
-            // 
-            // txtFödelsedag
-            // 
-            this.txtFödelsedag.Location = new System.Drawing.Point(1099, 258);
-            this.txtFödelsedag.Name = "txtFödelsedag";
-            this.txtFödelsedag.Size = new System.Drawing.Size(100, 20);
-            this.txtFödelsedag.TabIndex = 2;
             // 
             // txtEpost
             // 
             this.txtEpost.Location = new System.Drawing.Point(1099, 232);
             this.txtEpost.Name = "txtEpost";
-            this.txtEpost.Size = new System.Drawing.Size(100, 20);
+            this.txtEpost.Size = new System.Drawing.Size(138, 20);
             this.txtEpost.TabIndex = 3;
             // 
             // txtTelefon
             // 
             this.txtTelefon.Location = new System.Drawing.Point(1099, 206);
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefon.Size = new System.Drawing.Size(138, 20);
             this.txtTelefon.TabIndex = 4;
             // 
             // txtPostort
             // 
             this.txtPostort.Location = new System.Drawing.Point(1099, 180);
             this.txtPostort.Name = "txtPostort";
-            this.txtPostort.Size = new System.Drawing.Size(100, 20);
+            this.txtPostort.Size = new System.Drawing.Size(138, 20);
             this.txtPostort.TabIndex = 5;
             // 
             // txtPostnummer
             // 
             this.txtPostnummer.Location = new System.Drawing.Point(1099, 154);
             this.txtPostnummer.Name = "txtPostnummer";
-            this.txtPostnummer.Size = new System.Drawing.Size(100, 20);
+            this.txtPostnummer.Size = new System.Drawing.Size(138, 20);
             this.txtPostnummer.TabIndex = 6;
             // 
             // txtGatuadress
             // 
             this.txtGatuadress.Location = new System.Drawing.Point(1099, 128);
             this.txtGatuadress.Name = "txtGatuadress";
-            this.txtGatuadress.Size = new System.Drawing.Size(100, 20);
+            this.txtGatuadress.Size = new System.Drawing.Size(138, 20);
             this.txtGatuadress.TabIndex = 7;
             // 
             // label1
@@ -220,15 +222,6 @@
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Epost";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1033, 265);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Födelsedag";
             // 
             // cmdAdd
             // 
@@ -286,18 +279,35 @@
             this.cmdDelete.UseVisualStyleBackColor = true;
             this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
+            // dateFödelsedag
+            // 
+            this.dateFödelsedag.Location = new System.Drawing.Point(1099, 258);
+            this.dateFödelsedag.Name = "dateFödelsedag";
+            this.dateFödelsedag.Size = new System.Drawing.Size(138, 20);
+            this.dateFödelsedag.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1033, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Födelsedag";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 432);
+            this.ClientSize = new System.Drawing.Size(1321, 432);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dateFödelsedag);
             this.Controls.Add(this.cmdDelete);
             this.Controls.Add(this.cmdUppdatera);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtSok);
             this.Controls.Add(this.lstPersoner);
             this.Controls.Add(this.cmdAdd);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -309,7 +319,6 @@
             this.Controls.Add(this.txtPostort);
             this.Controls.Add(this.txtTelefon);
             this.Controls.Add(this.txtEpost);
-            this.Controls.Add(this.txtFödelsedag);
             this.Controls.Add(this.txtNamn);
             this.Controls.Add(this.Dataview);
             this.Name = "Form1";
@@ -333,7 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Epost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Födelsedag;
         private System.Windows.Forms.TextBox txtNamn;
-        private System.Windows.Forms.TextBox txtFödelsedag;
         private System.Windows.Forms.TextBox txtEpost;
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.TextBox txtPostort;
@@ -345,13 +353,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.ListBox lstPersoner;
         private System.Windows.Forms.TextBox txtSok;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button cmdUppdatera;
         private System.Windows.Forms.Button cmdDelete;
+        private System.Windows.Forms.DateTimePicker dateFödelsedag;
+        private System.Windows.Forms.Label label7;
     }
 }
 

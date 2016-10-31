@@ -30,12 +30,12 @@ namespace Inlamning1
         {
             using (var context = new PersonerContext())
             {
-                Personer newPerson = new Models.Personer { Namn = txtNamn.Text, Gatuadress = txtGatuadress.Text, Postnummer = txtPostnummer.Text, Postort = txtPostort.Text, Telefon = txtTelefon.Text, Epost = txtEpost.Text, Födelsedag = txtFödelsedag.Text };
+                Personer newPerson = new Models.Personer { Namn = txtNamn.Text, Gatuadress = txtGatuadress.Text, Postnummer = txtPostnummer.Text, Postort = txtPostort.Text, Telefon = txtTelefon.Text, Epost = txtEpost.Text, Födelsedag = dateFödelsedag.Value };
                 context.Folk.Add(newPerson);
                 context.SaveChanges();
             }
             listPersoner.Clear();
-            lstPersoner.Items.Clear();            
+            lstPersoner.Items.Clear();
             Fill();
         }
 
@@ -67,8 +67,11 @@ namespace Inlamning1
                     }
                 }
             }
-            else
+            if (txtSok.Text == "")
+            {
                 txtSok.Text = "";
+                Fill();
+            }
         }
 
         private void txtSok_TextChanged(object sender, EventArgs e)
@@ -77,6 +80,11 @@ namespace Inlamning1
         }
 
         private void lstPersoner_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Lista();
+        }
+
+        private void Lista()
         {
             if (lstPersoner.SelectedItem != null)
             {
@@ -95,7 +103,7 @@ namespace Inlamning1
                 txtPostort.Text = listPersoner[lstPersoner.SelectedIndex].Postort;
                 txtTelefon.Text = listPersoner[lstPersoner.SelectedIndex].Telefon;
                 txtEpost.Text = listPersoner[lstPersoner.SelectedIndex].Epost;
-                txtFödelsedag.Text = listPersoner[lstPersoner.SelectedIndex].Födelsedag;
+                dateFödelsedag.Value = listPersoner[lstPersoner.SelectedIndex].Födelsedag;
             }
         }
 
@@ -110,7 +118,7 @@ namespace Inlamning1
                 SelectedName.Postort = txtPostort.Text;
                 SelectedName.Telefon = txtTelefon.Text;
                 SelectedName.Epost = txtEpost.Text;
-                SelectedName.Födelsedag = txtFödelsedag.Text;
+                SelectedName.Födelsedag = dateFödelsedag.Value;
 
                 using (var f = new PersonerContext())
                 {
@@ -118,6 +126,8 @@ namespace Inlamning1
                     f.SaveChanges();
                 }
             }
+
+            Lista();
         }
 
         private void cmdDelete_Click(object sender, EventArgs e)
@@ -140,7 +150,7 @@ namespace Inlamning1
             txtPostort.Text = "";
             txtTelefon.Text = "";
             txtEpost.Text = "";
-            txtFödelsedag.Text = "";
+            dateFödelsedag.Value = DateTime.Now;
         }
     }
 }
