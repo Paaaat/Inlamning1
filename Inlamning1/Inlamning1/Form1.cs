@@ -132,25 +132,32 @@ namespace Inlamning1
 
         private void cmdDelete_Click(object sender, EventArgs e)
         {
-            txtSok.Text = "";
-            Personer SelectedName = listPersoner[lstPersoner.SelectedIndex];
-            using (var newContext = new PersonerContext())
+            if (lstPersoner.SelectedItem != null)
             {
-                newContext.Entry(SelectedName).State = System.Data.Entity.EntityState.Deleted;
+                txtSok.Text = "";
+                Personer SelectedName = listPersoner[lstPersoner.SelectedIndex];
+                using (var newContext = new PersonerContext())
+                {
+                    newContext.Entry(SelectedName).State = System.Data.Entity.EntityState.Deleted;
 
-                newContext.SaveChanges();
+                    newContext.SaveChanges();
+                }
+                listPersoner.Clear();
+                lstPersoner.Items.Clear();
+                Fill();
+                Dataview.Rows.Clear();
+                txtNamn.Text = "";
+                txtGatuadress.Text = "";
+                txtPostnummer.Text = "";
+                txtPostort.Text = "";
+                txtTelefon.Text = "";
+                txtEpost.Text = "";
+                dateFödelsedag.Value = DateTime.Now;
             }
-            listPersoner.Clear();
-            lstPersoner.Items.Clear();
-            Fill();
-            Dataview.Rows.Clear();
-            txtNamn.Text = "";
-            txtGatuadress.Text = "";
-            txtPostnummer.Text = "";
-            txtPostort.Text = "";
-            txtTelefon.Text = "";
-            txtEpost.Text = "";
-            dateFödelsedag.Value = DateTime.Now;
+            else
+            {
+                MessageBox.Show("Du måste välja en kontakt för att ta bort den");
+            }
         }
     }
 }
